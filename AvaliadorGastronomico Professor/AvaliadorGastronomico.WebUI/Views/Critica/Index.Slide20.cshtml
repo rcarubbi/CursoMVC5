@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AvaliadorGastronomico.Domain.Critica>
+@{
+    ViewBag.Title = "Críticas";
+}
+<h2>Últimas Críticas</h2>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Nota
+        </th>
+        <th>
+            Corpo
+        </th>
+        <th>Criada Em</th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
+        </td>
+        <td>
+            @item.Nota 
+        </td>
+        <td>
+            @Html.Raw(item.Corpo)
+        </td>
+        <td>
+            @String.Format("{0:g}", item.DataCriacao)
+        </td>
+    </tr>
+</table>
+<p>
+    @Html.ActionLink("Criar Nova", "Criar")
+</p>
+           

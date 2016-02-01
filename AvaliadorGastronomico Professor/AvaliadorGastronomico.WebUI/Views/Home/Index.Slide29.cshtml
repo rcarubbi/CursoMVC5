@@ -1,0 +1,14 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@Model.BoasVindas</h2>
+
+
+@section footer
+{
+    @Html.Action("ExibirMelhorCritica", "Critica")
+}

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AvaliadorGastronomico.Domain.Critica>
+@{
+    ViewBag.Title = "Críticas";
+}
+<h2>Últimas Críticas</h2>
+
+
+ 
+@foreach (var item in Model)
+{
+    @* Slide 22.4 *@
+    @* Crítica  
+    <text>Crítica</text>
+    @: Texto explicito this void main *@
+    
+    <div class="review">
+        <h4>@item.Restaurante.Nome</h4> *@
+        <h5>Nota: @item.Nota</h5>
+        <p>
+            @item.Corpo
+        </p> 
+    </div> 
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AvaliadorGastronomico.Domain.Critica>
+@{
+    ViewBag.Title = "Críticas";
+}
+<h2>Últimas Críticas</h2>
+
+@foreach (var item in Model)
+{
+    <div class="review">
+         <h4>@item.Restaurante.Nome</h4> *@
+         <img src="@item.Restaurante.CaminhoImagem" alt="@item.Restaurante.Nome" /> @*não funciona pois o valor do caminho imagem está encoded *@
+         @Html.Image(item.Restaurante.CaminhoImagem, item.Restaurante.Nome)
+        <h5>Nota: @item.Nota</h5>
+        <p>
+            @item.Corpo
+            @Html.ActionLink("Editar", "Editar", new { Id = item.Id })
+        </p> 
+    </div> 
+   
+}
+
+ 
+  
+
+
+ 

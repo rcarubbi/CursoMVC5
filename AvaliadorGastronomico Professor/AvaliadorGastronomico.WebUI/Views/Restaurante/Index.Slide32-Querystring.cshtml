@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AvaliadorGastronomico.Domain.Restaurante>
+
+@{
+    ViewBag.Title = "Restaurantes";
+}
+
+<h2>Lista de Restaurantes</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Localização
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Nome
+        </td>
+        <td>
+            @item.Endereco.Cidade - @item.Endereco.UF
+        </td>
+    </tr>
+}
+
+</table>

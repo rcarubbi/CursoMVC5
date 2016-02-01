@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AvaliadorGastronomico.Domain.Restaurante>
+
+
+@{
+    ViewBag.Title = "Restaurantes";
+}
+
+
+<h2>Lista de Restaurantes</h2>
+@using(Html.BeginForm("Index", "Restaurant", FormMethod.Get))
+{
+    @Html.DropDownList("uf", new SelectList(ViewBag.Ufs))
+    <input type="submit" value="Filtrar" />
+} 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Localização
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Nome
+        </td>
+        <td>
+            @item.Endereco.Cidade - @item.Endereco.UF
+        </td>
+      
+    </tr>
+}
+
+</table>

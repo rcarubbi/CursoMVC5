@@ -1,0 +1,25 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@Model.BoasVindas</h2>
+
+
+ 
+@Ajax.ActionLink("Clique para ver a última crítica", "ExibirUltimaCritica", new AjaxOptions {
+        UpdateTargetId = "ultimaCriticaContainer",
+        InsertionMode = System.Web.Mvc.Ajax.InsertionMode.InsertBefore,
+        HttpMethod = "GET",
+        LoadingElementId="progress"
+});
+
+<div id="ultimaCriticaContainer">
+</div>
+
+
+<div id="progress">
+    @Html.Image(Url.Content("~/Content/images/ajax-loader.gif"), "carregando...")
+</div>

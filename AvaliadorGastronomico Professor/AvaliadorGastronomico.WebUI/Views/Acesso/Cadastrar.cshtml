@@ -1,0 +1,37 @@
+﻿@model AvaliadorGastronomico.WebUI.Models.CadastroViewModel
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Crie uma nova conta.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Formulário de Cadastro</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.NomeConta )
+                @Html.TextBoxFor(m => m.NomeConta)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Senha)
+                @Html.PasswordFor(m => m.Senha)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmacaoSenha)
+                @Html.PasswordFor(m => m.ConfirmacaoSenha)
+            </li>
+        </ol>
+        <input type="submit" value="Cadastrar" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,18 @@
+﻿@model AvaliadorGastronomico.WebUI.Models.AlteracaoSenhaViewModel
+@{
+    ViewBag.Title = "Alteração de Senha";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<p>Você está logado como <strong>@User.Identity.Name</strong>.</p>
+
+@Html.Partial("_AlterarSenha")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

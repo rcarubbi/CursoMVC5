@@ -1,0 +1,47 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@Model.BoasVindas</h2>
+
+ 
+<form method="get" action="@Url.Action("BuscarRestaurantesJson", "Home")" id="formBuscarRestaurantesJson" >
+    <input type="text" name="q2" data-autocomplete="@Url.Action("SugerirRestaurantes", "Home")" />
+    <input type="submit" value="Buscar Restaurantes"  />
+</form>
+
+ <table>
+    <thead>
+        <th>
+            Nome
+        </th>
+        <th>
+            Localidade
+        </th>
+    </thead>
+    <tbody id="ResultadoBuscaContainerJson">
+
+
+    </tbody>
+</table>
+
+
+<script id="resultadoBuscaTemplate" type="text/x-jquery-tmpl">
+    <tr>
+        <td>
+            ${Nome}
+        </td>
+        <td>
+            ${Cidade}, ${UF}
+        </td>
+    </tr>
+</script>
+
+ 
+
+<div id="progress">
+    @Html.Image(Url.Content("~/Content/images/ajax-loader.gif"), "carregando...")
+</div>

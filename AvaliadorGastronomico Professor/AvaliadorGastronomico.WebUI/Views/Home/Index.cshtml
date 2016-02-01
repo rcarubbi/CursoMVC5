@@ -1,0 +1,28 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@AvaliadorGastronomico.WebUI.Views.Home.Resources.HomeResources.BoasVindas</h2>
+
+
+@using (Ajax.BeginForm("BuscarRestaurantes", "Home", new AjaxOptions
+{
+    HttpMethod = "GET",
+    InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace,
+    UpdateTargetId = "ResultadoBuscaContainer",
+    LoadingElementId = "progress"
+}))
+{
+    <input type="text" name="q" />
+    <input type="submit" name="Busca" value="Buscar Restaurantes" />
+}
+
+<table id="ResultadoBuscaContainer">
+</table>
+
+<div id="progress">
+    @Html.Image(Url.Content("~/Content/images/ajax-loader.gif"), "carregando...")
+</div>

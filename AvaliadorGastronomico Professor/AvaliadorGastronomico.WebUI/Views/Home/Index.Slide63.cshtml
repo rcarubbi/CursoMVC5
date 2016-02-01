@@ -1,0 +1,19 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@Model.BoasVindas</h2>
+
+ @{ 
+    var qtd = 10.0m;
+    var data = new DateTime(2015, 10, 5);
+}
+<div>
+    @qtd.ToString("c")
+</div>
+<div>
+    @data.ToShortDateString()
+</div>

@@ -1,0 +1,11 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@Model.BoasVindas</h2>
+
+<p>Index renderizado em @DateTime.Now.ToLongTimeString()</p>
+@Html.Action("ActionFilha")
