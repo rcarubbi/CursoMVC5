@@ -1,4 +1,4 @@
-﻿<!-- slide 98-->
+﻿<!-- slide 97-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,19 +15,19 @@
     <script>
         $(function () {
 
-            var getPateitns = function () {
+            var getPatients = function () {
                 
                 $.get(url).always(showResponse);
                 return false;
             };
 
             var showResponse = function (object) {
-                $("output").text(JSON.stringify(object, null, 4));
+                $("#output").text(JSON.stringify(object, null, 4));
             }; 
 
             var url = "http://localhost:56327/api/patients";
 
-            $("getPatients").click(getPatients);
+            $("#getPatients").click(getPatients);
         });
     </script>
 </body>

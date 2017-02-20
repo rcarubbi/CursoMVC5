@@ -10,10 +10,12 @@ using System.Web.Http.Cors;
 
 namespace PatientData.Controllers
 {
-    // slide 96.2
+    // slide 95.2
 
-    // slide 98 - habilitando CORS apenas para um controller
+    // slide 97 - habilitando CORS apenas para um controller
     [EnableCors("*", "*", "GET")]
+    // slide 98.1
+    [Authorize]
     public class PatientsController : ApiController
     {
 
@@ -33,7 +35,7 @@ namespace PatientData.Controllers
         }
 
 
-        ////Slide 96.3 Versão WebAPI 1
+        ////Slide 95.3 Versão WebAPI 1
         //public HttpResponseMessage Get(string id)
         //{
         //    var patient = _patients.Find(p => p.Id == id).SingleOrDefault();
@@ -46,7 +48,7 @@ namespace PatientData.Controllers
         //    return Request.CreateResponse(patient);
         //}
 
-        ////Slide 96.4 (rodar antes de marcar com route attribute)
+        ////Slide 95.4 (rodar antes de marcar com route attribute)
         //[Route("api/patients/{id}/medications")]
         //public HttpResponseMessage GetMedications(string id)
         //{
@@ -60,7 +62,7 @@ namespace PatientData.Controllers
         //    return Request.CreateResponse(patient.Medications);
         //}
 
-        //Slide 97 Versão WebAPI 2
+        //Slide 96 Versão WebAPI 2
         public IHttpActionResult Get(string id)
         {
             var patient = _patients.Find(p => p.Id == id).SingleOrDefault();
@@ -73,7 +75,7 @@ namespace PatientData.Controllers
             return Ok(patient);
         }
 
-        ////Slide 97
+        ////Slide 96
         [Route("api/patients/{id}/medications")]
         public IHttpActionResult GetMedications(string id)
         {

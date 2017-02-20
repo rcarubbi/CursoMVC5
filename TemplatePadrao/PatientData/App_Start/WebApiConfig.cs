@@ -15,14 +15,15 @@ namespace PatientData
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
+            // slide 98.1
             config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType)); 
 
-            // slide 98
+            // slide 97
             var cors = new EnableCorsAttribute("*", "*", "GET");
             config.EnableCors(cors);
 
-            // Slide 96.4
+            // Slide 95.4
             // Web API routes
             config.MapHttpAttributeRoutes();
 

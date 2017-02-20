@@ -19,7 +19,7 @@ namespace PatientData
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            // Slide 96.2
+            // Slide 95.2
             MongoConfig.Seed();
         }
     }

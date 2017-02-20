@@ -1,0 +1,86 @@
+﻿<!-- slide 98.2-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h3>Auth Request</h3>
+    <form id="userData">
+        <input type="text" name="userName" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" />
+        <input type="submit" id="register" value="Register" />
+        <!-- slide 98.3 -->
+        <input type="submit" id="login" value="Login" />
+    </form>
+
+    <button id="getPatients">Get Patients</button>
+    <pre id="output">
+
+    </pre>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            var accessToken = "";
+
+            //var getPatients = function () {
+            //    var url = "/api/patients";
+            //    $.get(url).always(showResponse);
+            //    return false;
+            //};
+
+            var showResponse = function (object) {
+                $("#output").text(JSON.stringify(object, null, 4));
+            }; 
+
+            var register = function () {
+                var url = "/api/Account/register";
+                var data = $("#userData").serialize();
+                $.post(url, data).always(showResponse);
+                return false;
+            };
+
+            // slide 98.3
+
+            var getPatients = function () {
+                var url = "/api/patients";
+                $.ajax(url, {
+                    type: "GET",
+                    headers: getHeaders()
+                }).always(showResponse);
+                return false;
+            };
+
+            var getHeaders = function () {
+                if (accessToken) {
+                    return { "Authorization": "Bearer " + accessToken }; 
+                }
+            };
+
+            var saveAccesToken = function (data) {
+                accessToken = data.access_token;
+            };
+
+            var login = function() {
+                var url = "/token";
+                var data = $("#userData").serialize();
+                data = data + "&grant_type=password";
+                $.post(url, data)
+                    .success(saveAccesToken)
+                    .always(showResponse);
+                return false;
+            };
+
+            $("#login").click(login);
+            // fim slide 98.3
+
+
+            $("#register").click(register)
+            $("#getPatients").click(getPatients);
+        });
+    </script>
+</body>
+</html>

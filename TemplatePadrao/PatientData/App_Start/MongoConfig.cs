@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace PatientData
 {
-    // Slide 96.2
+    // Slide 95.2
     public class MongoConfig
     {
         public static void Seed()
