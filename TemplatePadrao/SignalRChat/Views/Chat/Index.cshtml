@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Chat Básico";
+}
+<label for="apelido">Seu Apelido:</label><input type="text" name="apelido" id="apelido" /><br />
+<label for="mensagem">Mensagem:</label><input type="text" name="mensagem" id="mensagem" maxlength="100" />
+<div id="chatWindow" style="width: 100%; height: 300px; overflow: scroll; border: 1px solid grey"></div>
+
+<!-- Referenciando os scripts adicionados ao Bundle -->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/SignalR")
+
+<!-- Referencia para o script de Hub criado automaticamente -->
+<script src="/signalr/hubs" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        // Declarando um proxy de referencia ao Hub
+        var chatHub = $.connection.chatHub;
+
+        // Criando a função que será chamada pelo Hub para distribuir as mensagens aos clientes.
+        // Por convenção as chamadas aos métodos são feitas em "camelCase"
+        chatHub.transmitirMensagem = function (apelido, msg) {
+
+            // Area do chat
+            var chatWin = $("#chatWindow");
+
+            // Publicando a mensagem no chat
+            chatWin.html(chatWin.html() + "<b>" + apelido + "</b>: " + msg + "<br />");
+        };
+
+        // Iniciando a conexão com o Hub
+        $.connection.hub.start();
+
+        // Validando o botão enter
+        $(document).keypress(function (e) {
+            if (e.which == 13) {
+
+                // Chamando o método de transmissão de mensagem no Hub
+                chatHub.enviarMensagem($("#apelido").val(), $("#mensagem").val());
+
+                // Limpando o texto da mensagem.
+                $("#mensagem").val("");
+            }
+        });
+    });
+</script>
