@@ -1,8 +1,6 @@
 ﻿@* Slide 41 *@
- @using System.Web.Mvc
-
+@using System.Web.Mvc
 @helper Script(string scriptName, UrlHelper url)
 {
     <script src="@url.Content("~/Scripts/" + scriptName)" type="text/javascript"></script>
-    @* <script src="@("~/Scripts/" + scriptName)" type="text/javascript"></script> *@
 }

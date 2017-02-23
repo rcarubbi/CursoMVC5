@@ -32,7 +32,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             
         }
         
-        #region Slide 41
+        #region Slide 42
         private AvaliadorGastronomicoDbContext _db = new AvaliadorGastronomicoDbContext();
         public PartialViewResult ExibirUltimaCritica()
         {
