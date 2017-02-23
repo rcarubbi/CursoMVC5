@@ -7,14 +7,11 @@
 
 
 <h2>Lista de Restaurantes</h2>
-@using(Html.BeginForm("Index", "Restaurant", FormMethod.Get))
+@using(Html.BeginForm("Index", "Restaurante", FormMethod.Get))
 {
     @Html.DropDownList("uf", new SelectList(ViewBag.Ufs))
     <input type="submit" value="Filtrar" />
 } 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
         <th>

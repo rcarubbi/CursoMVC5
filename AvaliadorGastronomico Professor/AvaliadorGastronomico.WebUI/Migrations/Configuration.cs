@@ -44,10 +44,10 @@ namespace AvaliadorGastronomico.WebUI.Migrations
 
         private void SeedRestaurantes(AvaliadorGastronomicoDbContext context)
         {
-            context.Restaurantes.AddOrUpdate(r => r.Nome, new Restaurante
+            var restaurante1 = new Restaurante
             {
                 Nome = "Sushi Yassu - Liberdade 2",
-                CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
+                CaminhoImagem = "~/Content/images/Restaurante1.jpg",
                 Endereco = new Endereco
                 {
                     Cidade = "S„o Paulo",
@@ -56,24 +56,53 @@ namespace AvaliadorGastronomico.WebUI.Migrations
                     Pais = "Brasil"
                 },
                 NomeChef = "N„o Informado"
-            },
-             new Restaurante
-             {
-                 Nome = "Sushi Yassu - Liberdade",
-                 CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
-                 Endereco = new Endereco
-                 {
-                     Cidade = "S„o Paulo",
-                     Logradouro = "Rua Tom·s Gonzaga, 98",
-                     UF = "SP",
-                     Pais = "Brasil"
-                 },
-                 NomeChef = "N„o Informado"
-             }
+            };
+
+            restaurante1.Criticas = new List<Critica> {
+                new Critica {
+                     Corpo = "Muito bom!",
+                     Nota = 8,
+                     DataCriacao = DateTime.Now,
+                     DataRefeicao  = DateTime.Now.AddDays(-5).Date,
+                },
+                       new Critica {
+                     Corpo = "”timo!",
+                     Nota = 9,
+                     DataCriacao = DateTime.Now,
+                     DataRefeicao  = DateTime.Now.AddDays(-5).Date,
+                },
+            };
+
+            var restaurante2 = new Restaurante
+            {
+                Nome = "Sushi Yassu - Liberdade",
+                CaminhoImagem = "~/Content/images/Restaurante1.jpg",
+                Endereco = new Endereco
+                {
+                    Cidade = "S„o Paulo",
+                    Logradouro = "Rua Tom·s Gonzaga, 98",
+                    UF = "SP",
+                    Pais = "Brasil"
+                },
+                NomeChef = "N„o Informado"
+            };
+
+            restaurante2.Criticas = new List<Critica>
+            {
+                  new Critica {
+                     Corpo = "Regular...",
+                     Nota = 5,
+                     DataCriacao = DateTime.Now,
+                     DataRefeicao  = DateTime.Now.AddDays(-5).Date,
+                }
+            };
+
+            context.Restaurantes.AddOrUpdate(r => r.Nome, restaurante1,
+                restaurante2
              , new Restaurante
              {
                  Nome = "Shintori",
-                 CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
+                 CaminhoImagem = "~/Content/images/Restaurante1.jpg",
                  Endereco = new Endereco
                  {
                      Cidade = "S„o Paulo",
@@ -86,12 +115,12 @@ namespace AvaliadorGastronomico.WebUI.Migrations
              new Restaurante
              {
                  Nome = "Sass·Sushi - Itaim",
-                 CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
+                 CaminhoImagem = "~/Content/images/Restaurante1.jpg",
                  Endereco = new Endereco
                  {
-                     Cidade = "S„o Paulo",
+                     Cidade = "Rio de Janeiro",
                      Logradouro = "Avenida Hor·cio Lafer, 640",
-                     UF = "SP",
+                     UF = "RJ",
                      Pais = "Brasil"
                  },
                  NomeChef = "N„o Informado"
@@ -99,12 +128,12 @@ namespace AvaliadorGastronomico.WebUI.Migrations
              new Restaurante
              {
                  Nome = "Momotaro",
-                 CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
+                 CaminhoImagem = "~/Content/images/Restaurante1.jpg",
                  Endereco = new Endereco
                  {
-                     Cidade = "S„o Paulo",
+                     Cidade = "Rio de Janeiro",
                      Logradouro = "Rua Diogo J·come, 591",
-                     UF = "SP",
+                     UF = "RJ",
                      Pais = "Brasil"
                  },
                  NomeChef = "N„o Informado"
@@ -112,7 +141,7 @@ namespace AvaliadorGastronomico.WebUI.Migrations
              new Restaurante
              {
                  Nome = "Aya Japanese Cuisine",
-                 CaminhoImagem = new UrlHelper(HttpContext.Current.Request.RequestContext).Content("~/Content/images/Restaurante1.jpg"),
+                 CaminhoImagem = "~/Content/images/Restaurante1.jpg",
                  Endereco = new Endereco
                  {
                      Cidade = "S„o Paulo",
@@ -122,6 +151,9 @@ namespace AvaliadorGastronomico.WebUI.Migrations
                  },
                  NomeChef = "N„o Informado"
              });
+
+
+
         }
     }
 }

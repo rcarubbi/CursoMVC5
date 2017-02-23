@@ -20,7 +20,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             #endregion
 
             #region Slide 5.3 a
-            var model = new { Mensagem = "Bem Vindo" };
+            var model = new Mensagens { BoasVindas = "Bem Vindo" };
             return View(model);
             #endregion 
 

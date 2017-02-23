@@ -28,7 +28,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         }
         #endregion
 
-        #region Slide 32
+        #region Slide 34
         //
         // GET: /Critica/Criar
 
@@ -59,6 +59,14 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         }
         #endregion
 
+        #region Slide 26
+        public ActionResult Editar(int id)
+        {
+            var critica = _db.Criticas.FindById(id);
+            return View(critica);
+        }
+        #endregion
+
         #region Slide 55
         //
         // GET: /Critica/Editar/5
@@ -68,14 +76,17 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             return View(critica);
         }
 
-        #region Slide 55.2
+        #region Slide 36
         //
         // POST: /Critica/Editar/5
-        [HttpPost]
+
+        #region slide 55.2
         [ValidateInput(false)]
+        #endregion
         #region Slide 58
         [ValidateAntiForgeryToken]
         #endregion
+        [HttpPost]
         public ActionResult Editar(int id, FormCollection collection)
         {
 

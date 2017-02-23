@@ -3,6 +3,7 @@ using System.Web.Mvc;
 
 namespace AvaliadorGastronomico.WebUI
 {
+    // slide 15
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)

@@ -5,6 +5,8 @@ using AvaliadorGastronomico.WebUI.Controllers;
 using AvaliadorGastronomico.WebUI.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using System.Web.Mvc;
+
 namespace AvaliadorGastronomico.Tests
 {
     // Slide 6
@@ -16,7 +18,7 @@ namespace AvaliadorGastronomico.Tests
         public void Passando_Mensagens_Na_ViewBag()
         {
             var controller = new HomeController();
-            var result = controller.Index();
+            var result = (ViewResult)controller.Index();
             Assert.IsNotNull(result.ViewBag.Message);
         }*/
         #endregion

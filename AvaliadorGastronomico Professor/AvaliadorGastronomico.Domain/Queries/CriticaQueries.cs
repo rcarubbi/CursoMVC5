@@ -15,6 +15,13 @@ namespace AvaliadorGastronomico.Domain.Queries
             return instance.OrderByDescending(m => m.DataRefeicao).Take(numeroDeCriticas).ToList();
         }
 
+        #region Slide 26
+        public static Critica FindById(this IQueryable<Critica> instance, int id)
+        {
+            return instance.SingleOrDefault(c => c.Id == id);
+        }
+        #endregion
+
         #region Slide 29
         public static Critica ProcurarMelhorCritica(this IQueryable<Critica> instance)
         {
@@ -22,12 +29,7 @@ namespace AvaliadorGastronomico.Domain.Queries
         }
         #endregion
         
-        #region Slide 55
-        public static Critica FindById(this IQueryable<Critica> instance, int id)
-        {
-            return instance.SingleOrDefault(c => c.Id == id);
-        }
-        #endregion
+      
     }
     #endregion
 

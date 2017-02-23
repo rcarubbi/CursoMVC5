@@ -1,5 +1,5 @@
 ﻿@model AvaliadorGastronomico.Domain.Restaurante
-
+@* slide 34 *@
 @{
     ViewBag.Title = "Detalhes";
 }
@@ -18,8 +18,7 @@
      @Html.DisplayFor(r => r.Endereco)
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </p>
 
 <h2>Críticas</h2>

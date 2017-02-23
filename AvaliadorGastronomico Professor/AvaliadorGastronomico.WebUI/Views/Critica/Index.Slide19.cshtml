@@ -16,12 +16,13 @@
     </tr>
 
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
          <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
         </td>
         <td>
             @item.Nota 
@@ -33,6 +34,7 @@
             @String.Format("{0:g}", item.DataCriacao)
         </td>
     </tr>
+}
 </table>
 <p>
     @Html.ActionLink("Criar Nova", "Criar")

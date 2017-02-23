@@ -14,13 +14,13 @@ namespace AvaliadorGastronomico.WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             #region Slide 9
-            /*routes.MapRoute("Cozinha", "cozinha/{name}",
+            /*routes.MapRoute("Cozinha", "cozinha/{nome}",
                 new { controller = "Cozinha", action = "Pesquisar" }
             );*/
             #endregion
 
-            #region Slide 11
-            /*routes.MapRoute("Cozinha", "cozinha/{name}",
+            #region Slide 11.2
+            /*routes.MapRoute("Cozinha", "cozinha/{nome}",
                 new { controller = "Cozinha", action = "Pesquisar", nome = UrlParameter.Optional }
             );*/
             #endregion

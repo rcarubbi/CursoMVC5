@@ -28,20 +28,21 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #region  Slide 11.1
         /*public ActionResult Pesquisar(string nome)
         {
+            var a = ControllerContext.RouteData;
             nome = Server.HtmlEncode(nome);
             return Content(nome);
         }*/
         #endregion
 
         #region  Slide 11.2
-       /* public ActionResult Pesquisar(string nome = "*")
-        {
-            if (nome == "*")
-            {
-                return RedirectToAction("Pesquisar", "Cozinha", new { nome = "francesa" });
-            }
-            return RedirectToAction("Index", "Home");
-        }*/
+        /* public ActionResult Pesquisar(string nome = "*")
+         {
+             if (nome == "*")
+             {
+                 return RedirectToAction("Pesquisar", "Cozinha", new { nome = "francesa" });
+             }
+             return Content(nome);
+         }*/
         #endregion
 
         #region  Slide 11.2 b
@@ -51,7 +52,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             {
                 return RedirectToRoute("Cozinha", new { nome = "japonesa" });
             }
-            return RedirectToAction("Index", "Home");
+            return Content(nome);
         }*/
         #endregion
 
@@ -62,6 +63,10 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         }*/
         #endregion
 
+        // slide 13.1
+        //[ActionName("Teste")]
+        // slide 13.2
+        //[AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         #region  Slide 12 b
         /*public ActionResult Pesquisar(string nome = "*")
         {

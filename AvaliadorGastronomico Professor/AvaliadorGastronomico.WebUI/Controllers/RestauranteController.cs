@@ -26,11 +26,11 @@ namespace AvaliadorGastronomico.WebUI.Controllers
 
         public ActionResult Detalhes(int id)
         {
-            var model = _context.Restaurantes.Single(r => r.Id == id);
+            var model = _db.Restaurantes.Single(r => r.Id == id);
             return View(model);
         }
     } */
     #endregion
-   
-  
+
+
 }

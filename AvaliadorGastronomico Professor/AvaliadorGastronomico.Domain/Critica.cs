@@ -11,19 +11,19 @@ using System.Web.Mvc;
 namespace AvaliadorGastronomico.Domain
 {
     #region Slide 19
-   /* public class Critica
-    {
-        public virtual int Id { get; set; }
-        public virtual string Corpo { get; set; }
-        public virtual DateTime DataCriacao { get; set; }
-        public virtual DateTime DataRefeicao { get; set; }
-        public virtual int Nota { get; set; }
-        
-        [ForeignKey("Restaurnate_Id")]
-        public virtual Restaurante Restaurante { get; set; }
+    /* public class Critica
+     {
+         public virtual int Id { get; set; }
+         public virtual string Corpo { get; set; }
+         public virtual DateTime DataCriacao { get; set; }
+         public virtual DateTime DataRefeicao { get; set; }
+         public virtual int Nota { get; set; }
 
-        public virtual int Restaurante_Id { get; set; }
-    }*/
+         [ForeignKey("Restaurante_Id")]
+         public virtual Restaurante Restaurante { get; set; }
+
+         public virtual int Restaurante_Id { get; set; }
+     }*/
     #endregion
 
     #region Slide 35
@@ -46,7 +46,7 @@ namespace AvaliadorGastronomico.Domain
 
         public virtual int Restaurante_Id { get; set; }
     }*/
-    #endregion 
+    #endregion
 
     #region Slide 36
     /*public class Critica : IValidatableObject
@@ -54,6 +54,7 @@ namespace AvaliadorGastronomico.Domain
         public virtual int Id { get; set; }
 
         [Required]
+        [MinLength]
         public virtual string Corpo { get; set; }
 
         [Range(1, 10)]
@@ -84,7 +85,7 @@ namespace AvaliadorGastronomico.Domain
             }
         }
     }*/
-    #endregion 
+    #endregion
 
     #region Slide 38
     /*public class Critica : IValidatableObject
@@ -126,7 +127,7 @@ namespace AvaliadorGastronomico.Domain
             }
         }
     }*/
-    #endregion 
+    #endregion
 
     #region Slide 55.4
     public class Critica : IValidatableObject
