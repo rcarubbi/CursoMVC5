@@ -136,6 +136,7 @@ namespace AvaliadorGastronomico.Domain
 
         [Required]
         [DataType(DataType.MultilineText)]
+        // slide 55.5
         [AllowHtml]
         public virtual string Corpo { get; set; }
 

@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
     [Authorize]
+    [RequireHttps]
     [InitializeSimpleMembership]
     public class AcessoController : Controller
     {

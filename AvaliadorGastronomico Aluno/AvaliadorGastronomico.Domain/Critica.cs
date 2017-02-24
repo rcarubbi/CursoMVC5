@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace AvaliadorGastronomico.Domain
 {
@@ -15,6 +16,7 @@ namespace AvaliadorGastronomico.Domain
 
         [Required]
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public virtual string Corpo { get; set; }
 
         [Range(1, 10)]

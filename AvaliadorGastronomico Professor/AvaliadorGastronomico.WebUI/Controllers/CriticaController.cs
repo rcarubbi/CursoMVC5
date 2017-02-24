@@ -105,8 +105,11 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #region Slide 55.4
         [HttpPost]
         #region Slide 58
-        [ValidateAntiForgeryToken]
+        [Authorize]
         #endregion
+        #region Slide 58.2
+        [ValidateAntiForgeryToken]
+        #endregion    
         public ActionResult Editar(Critica criticaAtualizada)
         {
             if (ModelState.IsValid)

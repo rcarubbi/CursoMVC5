@@ -1,0 +1,3 @@
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.Resources.ModelsResources.resources
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csproj.GenerateResource.Cache

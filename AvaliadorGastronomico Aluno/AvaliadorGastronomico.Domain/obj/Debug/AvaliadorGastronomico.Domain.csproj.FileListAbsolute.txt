@@ -3,3 +3,16 @@ C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGas
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.dll
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.pdb
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\System.Web.WebPages.Razor.xml

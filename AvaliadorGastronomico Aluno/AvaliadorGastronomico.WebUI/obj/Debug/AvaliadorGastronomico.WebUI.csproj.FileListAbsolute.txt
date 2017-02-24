@@ -42,3 +42,7 @@ C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGas
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\WebMatrix.Data.xml
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\System.Web.Helpers.dll
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\AntiXssLibrary.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\HtmlSanitizationLibrary.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\AntiXssLibrary.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\HtmlSanitizationLibrary.xml

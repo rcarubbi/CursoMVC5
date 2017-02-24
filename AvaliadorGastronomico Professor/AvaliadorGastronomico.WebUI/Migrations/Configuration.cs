@@ -45,7 +45,7 @@ namespace AvaliadorGastronomico.WebUI.Migrations
 
             if (membership.GetUser("admin", false) == null)
             {
-                WebSecurity.CreateUserAndAccount("admin", "admin");
+                WebSecurity.CreateUserAndAccount("admin", "admin123");
             }
             if (!roles.IsUserInRole("admin", "Admin"))
                 roles.AddUsersToRoles(new string[] { "admin" }, new string[] { "Admin" });

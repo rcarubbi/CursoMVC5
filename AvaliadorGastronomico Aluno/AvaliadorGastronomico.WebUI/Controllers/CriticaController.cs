@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using AvaliadorGastronomico.WebUI.Infrastructure;
 using AvaliadorGastronomico.Domain;
 using AvaliadorGastronomico.Domain.Queries;
+using Microsoft.Security.Application;
+
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
     
@@ -61,9 +63,27 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             var critica = _db.Criticas.FindById(id);
             return View(critica);
         }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Editar(Critica criticaAtualizada)
+        {
+            if (ModelState.IsValid)
+            {
+                criticaAtualizada.Corpo = Sanitizer.GetSafeHtmlFragment(criticaAtualizada.Corpo); // Slide 57
+                _db.Entry(criticaAtualizada).State = System.Data.Entity.EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(criticaAtualizada);
+        }
+
+
+
         #endregion
 
-         
+
     }
-  
+
 }

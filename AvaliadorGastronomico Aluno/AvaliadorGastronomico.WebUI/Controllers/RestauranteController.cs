@@ -14,6 +14,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
     {
         private AvaliadorGastronomicoDbContext _db = new AvaliadorGastronomicoDbContext();
 
+        [Authorize(Roles = "admin")]
         public ActionResult Index(string uf)
         {
             ViewBag.Ufs = _db.Restaurantes.Select(r => r.Endereco.UF).Distinct();
