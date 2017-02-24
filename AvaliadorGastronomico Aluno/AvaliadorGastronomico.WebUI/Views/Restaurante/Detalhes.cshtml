@@ -1,0 +1,29 @@
+﻿@model AvaliadorGastronomico.Domain.Restaurante
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Restaurante</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+     @Html.DisplayFor(r => r.Endereco)
+</fieldset>
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>
+
+<h2>Críticas</h2>
+
+@foreach (var item in Model.Criticas)
+{
+    @Html.Partial("_Critica", item)
+}
+
+@Html.ActionLink("Escrever uma nova crítica", "Criar", "Critica", new { IdRestaurante = Model.Id }, null)

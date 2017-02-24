@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace AvaliadorGastronomico.Domain
 {
     #region Slide 19
-    public class Endereco
-    {
-        public string Logradouro { get; set; }
-        public string Cidade { get; set; }
-        public string UF { get; set; }
-        public string Pais { get; set; }
-    }
+        public class Endereco
+        {
+            public string Logradouro { get; set; }
+            public string Cidade { get; set; }
+            public string UF { get; set; }
+            public string Pais { get; set; }
+        }
     #endregion
 }
