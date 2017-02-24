@@ -1,4 +1,5 @@
-﻿@model AvaliadorGastronomico.WebUI.Models.CadastroViewModel
+﻿@* slide 51 *@
+@model AvaliadorGastronomico.WebUI.Models.CadastroViewModel
 @{
     ViewBag.Title = "Cadastro";
 }
@@ -32,6 +33,16 @@
     </fieldset>
 }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
+
+
+@* slide 70 *@
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+

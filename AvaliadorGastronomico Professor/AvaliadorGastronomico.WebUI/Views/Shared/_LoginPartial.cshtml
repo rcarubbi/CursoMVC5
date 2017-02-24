@@ -1,4 +1,5 @@
-﻿@if (Request.IsAuthenticated) {
+﻿@*slide 51*@
+@if (Request.IsAuthenticated) {
     <text>
         Olá,  <strong>@Html.ActionLink(User.Identity.Name, "AlterarSenha", "Acesso")</strong>!
         @using (Html.BeginForm("LogOff", "Acesso", FormMethod.Post, new { id = "logoutForm" }))

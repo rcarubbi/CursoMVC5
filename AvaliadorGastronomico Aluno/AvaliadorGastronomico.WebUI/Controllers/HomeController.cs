@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AvaliadorGastronomico.Domain;
+using AvaliadorGastronomico.Domain.Queries;
+using AvaliadorGastronomico.WebUI.Infrastructure;
+using AvaliadorGastronomico.WebUI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,6 +13,9 @@ namespace AvaliadorGastronomico.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        #region slide 50
+        [Authorize]
+        #endregion
         public ViewResult Index()
         {
             var model = new Mensagens { BoasVindas = "Bem Vindo" };
@@ -67,5 +74,6 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             return Json(restaurantes, JsonRequestBehavior.AllowGet);
         }
 
- 
+
     }
+}

@@ -7,6 +7,7 @@ using System.Globalization;
 
 namespace AvaliadorGastronomico.Domain
 {
+    // slide 51
     public class Usuario
     {
         public int Id { get; set; }

@@ -20,6 +20,17 @@ namespace AvaliadorGastronomico.WebUI.Migrations
 
         protected override void Seed(AvaliadorGastronomicoDbContext context)
         {
+            #region slide 51
+            InitializeMembership(context);
+            //add reference system.web.helpers from Microsoft.AspNet.WebPages
+            #endregion
+
+            SeedRestaurantes(context);
+        }
+
+
+        private void InitializeMembership(AvaliadorGastronomicoDbContext context)
+        {
             if (!WebSecurity.Initialized)
                 WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Usuarios", "Id", "Login", true);
 
@@ -38,8 +49,6 @@ namespace AvaliadorGastronomico.WebUI.Migrations
             }
             if (!roles.IsUserInRole("admin", "Admin"))
                 roles.AddUsersToRoles(new string[] { "admin" }, new string[] { "Admin" });
-
-            SeedRestaurantes(context);
         }
 
         private void SeedRestaurantes(AvaliadorGastronomicoDbContext context)

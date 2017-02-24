@@ -1,4 +1,6 @@
-﻿@model AvaliadorGastronomico.WebUI.Models.LoginViewModel
+﻿@* slide 51 *@
+
+@model AvaliadorGastronomico.WebUI.Models.LoginViewModel
 
 @{
     ViewBag.Title = "Log in";
@@ -41,6 +43,14 @@
 </section>
  
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
+
+
+@* slide 70 *@
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

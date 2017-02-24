@@ -6,7 +6,9 @@
 }
 
 <h2>@Model.BoasVindas</h2>
-
+<p>
+    Você está logado como @User.Identity.Name
+</p>
  
 <form method="get" action="@Url.Action("BuscarRestaurantesJson", "Home")" id="formBuscarRestaurantesJson" >
     <input type="text" name="q2" data-autocomplete="@Url.Action("SugerirRestaurantes", "Home")" />

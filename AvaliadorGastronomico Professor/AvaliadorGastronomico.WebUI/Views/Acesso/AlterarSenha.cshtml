@@ -1,4 +1,5 @@
-﻿@model AvaliadorGastronomico.WebUI.Models.AlteracaoSenhaViewModel
+﻿@* slide 51 *@
+@model AvaliadorGastronomico.WebUI.Models.AlteracaoSenhaViewModel
 @{
     ViewBag.Title = "Alteração de Senha";
 }
@@ -13,6 +14,14 @@
 
 @Html.Partial("_AlterarSenha")
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
+
+
+@* slide 70 *@
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

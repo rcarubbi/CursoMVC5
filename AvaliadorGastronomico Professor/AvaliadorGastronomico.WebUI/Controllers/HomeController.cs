@@ -12,6 +12,9 @@ namespace AvaliadorGastronomico.WebUI.Controllers
 {
     /*public class HomeController : Controller
     {
+        #region slide 50
+        [Authorize]
+        #endregion
         public ViewResult Index()
         {
             #region Slide 5.2

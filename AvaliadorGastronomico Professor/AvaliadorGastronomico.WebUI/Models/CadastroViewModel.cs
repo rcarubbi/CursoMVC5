@@ -6,6 +6,7 @@ using System.Web;
 
 namespace AvaliadorGastronomico.WebUI.Models
 {
+    // slide 51
     public class CadastroViewModel
     {
         [Required]

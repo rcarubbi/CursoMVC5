@@ -12,6 +12,7 @@ using AvaliadorGastronomico.WebUI.Models;
 
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
+    // slide 51
     [Authorize]
     [InitializeSimpleMembership]
     #region Slide 53

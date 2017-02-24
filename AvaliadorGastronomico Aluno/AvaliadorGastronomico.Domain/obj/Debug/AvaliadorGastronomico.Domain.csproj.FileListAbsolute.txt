@@ -1,1 +1,5 @@
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\AvaliadorGastronomico.Domain.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\bin\Debug\AvaliadorGastronomico.Domain.pdb
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.pdb
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csprojResolveAssemblyReference.cache

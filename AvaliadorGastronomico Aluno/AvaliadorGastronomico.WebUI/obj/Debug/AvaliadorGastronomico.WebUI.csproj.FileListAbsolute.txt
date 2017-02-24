@@ -30,3 +30,15 @@ C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGas
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\obj\Debug\AvaliadorGastronomico.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\obj\Debug\AvaliadorGastronomico.WebUI.dll
 C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\obj\Debug\AvaliadorGastronomico.WebUI.pdb
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\AvaliadorGastronomico.Domain.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\AvaliadorGastronomico.Domain.pdb
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\obj\Debug\AvaliadorGastronomico.WebUI.Migrations.ModeloInicial.resources
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\obj\Debug\AvaliadorGastronomico.WebUI.csproj.GenerateResource.Cache
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\WebMatrix.Data.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\WebMatrix.WebData.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\WebMatrix.WebData.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\WebMatrix.Data.xml
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Raphael\Source\Repos\CursoMVC5\AvaliadorGastronomico Aluno\AvaliadorGastronomico.WebUI\bin\System.Web.Helpers.xml
