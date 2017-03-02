@@ -7,6 +7,7 @@ using AvaliadorGastronomico.WebUI.Infrastructure;
 
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
+    // slide 72
     public class UsuariosController : Controller
     {
         //

@@ -3,6 +3,7 @@ using System.Web.Optimization;
 
 namespace AvaliadorGastronomico.WebUI
 {
+    // slide 67
     public class BundleConfig
     {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725

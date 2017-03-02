@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace AvaliadorGastronomico.WebUI.ServiceClients
 {
+    // slide 77
     public class TempoServiceClient
     {
         public string RecuperarPrevisao()
@@ -25,9 +26,9 @@ namespace AvaliadorGastronomico.WebUI.ServiceClients
             return worker.EndInvoke(ar);
         }
 
-        public Task<string> RecuperarPrevisaoAsync()
+        public async Task<string> RecuperarPrevisaoAsync()
         {
-            return Task.Factory.StartNew(new Func<String>(RecuperarPrevisao));
+            return await Task.Factory.StartNew(new Func<String>(RecuperarPrevisao));
         }
 
        

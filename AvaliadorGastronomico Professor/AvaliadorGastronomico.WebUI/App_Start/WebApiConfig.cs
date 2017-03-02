@@ -5,6 +5,7 @@ using System.Web.Http;
 
 namespace AvaliadorGastronomico.WebUI
 {
+    // slide 72
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)

@@ -17,10 +17,12 @@ namespace AvaliadorGastronomico.WebUI
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            // slide 72
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             // slide 15
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // slide 67
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }

@@ -11,6 +11,7 @@ using AvaliadorGastronomico.WebUI.ServiceClients;
 
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
+    // slide 77.2
     [TrackElapsedTime]
     public class InfoController : Controller
     {

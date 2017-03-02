@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace AvaliadorGastronomico.WebUI.ServiceClients
 {
+    // slide 77
     public class NoticiaServiceClient
     {
 
@@ -26,9 +27,9 @@ namespace AvaliadorGastronomico.WebUI.ServiceClients
             return worker.EndInvoke(ar);
         }
 
-        public Task<string> RecuperarMancheteAsync()
+        public async Task<string> RecuperarMancheteAsync()
         {
-            return Task.Factory.StartNew(new Func<String>(RecuperarManchete));
+            return await Task.Factory.StartNew(new Func<String>(RecuperarManchete));
         }
 
       

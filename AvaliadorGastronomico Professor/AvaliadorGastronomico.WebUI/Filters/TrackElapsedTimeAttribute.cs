@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Diagnostics;
 namespace AvaliadorGastronomico.WebUI.Filters
 {
+    // slide 77
     public class TrackElapsedTimeAttribute : ActionFilterAttribute
     {
         public TrackElapsedTimeAttribute()

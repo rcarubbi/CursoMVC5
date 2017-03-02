@@ -105,7 +105,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         }
         #endregion
 
-        #region Slide 60
+        #region Slide 60 - c
         [OutputCache(Duration = 10, VaryByParam = "none")]
         public PartialViewResult ActionFilha()
         {
