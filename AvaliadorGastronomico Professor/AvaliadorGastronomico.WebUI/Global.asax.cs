@@ -14,6 +14,9 @@ namespace AvaliadorGastronomico.WebUI
     // visit http://go.microsoft.com/?LinkId=9394801
     public class MvcApplication : System.Web.HttpApplication
     {
+
+
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -25,6 +28,13 @@ namespace AvaliadorGastronomico.WebUI
             // slide 67
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            // slide 78
+            DisplayModeProvider.Instance.Modes.Insert(0, new DefaultDisplayMode("Chrome")
+            {
+                ContextCondition = (context => context.GetOverriddenUserAgent().IndexOf
+                ("chrome", StringComparison.OrdinalIgnoreCase) >= 0)
+            });
         }
     }
 }
