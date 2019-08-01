@@ -1,0 +1,105 @@
+﻿@using AvaliadorGastronomico.WebUI.Models;
+@using AvaliadorGastronomico.WebUI.Views.Home.Resources
+@model Mensagens
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>Parabéns! Você está usando o chrome</p>
+
+<h2>@Model.BoasVindas</h2>
+
+<h2>@HomeResources.BoasVindas</h2>
+
+<p>
+    Você está logado como @User.Identity.Name
+</p>
+
+@Ajax.ActionLink("Clique para ver a última crítica", "ExibirUltimaCritica", new AjaxOptions
+{
+        UpdateTargetId = "ultimaCriticaContainer",
+        InsertionMode = System.Web.Mvc.Ajax.InsertionMode.InsertBefore,
+        HttpMethod = "GET",
+        LoadingElementId = "progress"
+})
+
+<div id="ultimaCriticaContainer">
+</div>
+
+@using (Ajax.BeginForm("BuscarRestaurantes", "Home", new AjaxOptions
+{
+    HttpMethod = "GET",
+    InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace,
+    UpdateTargetId = "ResultadoBuscaContainer",
+    LoadingElementId = "progress"
+}))
+{
+    <input type="text" name="q" data-autocomplete="@Url.Action("SugerirRestaurantes", "Home")" />
+    <input type="submit" name="Busca" value="Buscar Restaurantes" />
+}
+
+<table id="ResultadoBuscaContainer"></table>
+
+
+<form method="get" action="@Url.Action("BuscarRestaurantesJson", "Home")" id="formBuscarRestaurantesJson">
+    <input type="text" name="q2" data-autocomplete="@Url.Action("SugerirRestaurantes", "Home")" />
+    <input type="submit" value="Buscar Restaurantes" />
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Localidade
+            </th>
+        </tr>
+    </thead>
+    <tbody id="ResultadoBuscaContainerJson">
+    </tbody>
+</table>
+
+
+<script id="resultadoBuscaTemplate" type="text/x-jquery-tmpl">
+    <tr>
+        <td>
+            ${Nome}
+        </td>
+        <td>
+            ${Cidade}, ${UF}
+        </td>
+    </tr>
+</script>
+
+
+<div id="progress">
+    @Html.Image("~/Content/images/ajax-loader.gif", "carregando...")
+</div>
+
+<p>Index renderizado em @DateTime.Now.ToLongTimeString()</p>
+@Html.Action("ActionFilha")
+
+
+@{
+    var qtd = 10.0m;
+    var data = new DateTime(2019, 7, 24);
+}
+<div>
+    @qtd.ToString("c")
+</div>
+<div>
+    @data.ToShortDateString()
+</div>
+
+
+@section scripts {
+    @RazorHelpers.Script("jquery.tmpl.js")
+}
+
+@section footer
+{
+    @Html.Action("ExibirMelhorCritica", "Critica")
+}

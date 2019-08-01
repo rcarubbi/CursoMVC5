@@ -10,7 +10,7 @@ using AvaliadorGastronomico.Domain;
 using AvaliadorGastronomico.WebUI.Models;
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
-    /*public class HomeController : Controller
+    public class HomeController : Controller
     {
         #region slide 50
         [Authorize]
@@ -25,16 +25,16 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             #region Slide 5.3 a
             var model = new Mensagens { BoasVindas = "Bem Vindo" };
             return View(model);
-            #endregion 
+            #endregion
 
-            
+
             #region Slide 5.3 b
             var model = new Mensagens { BoasVindas = "Bem Vindo" };
             return View(model);
-            #endregion 
-            
+            #endregion
+
         }
-        
+
         #region Slide 42
         private AvaliadorGastronomicoDbContext _db = new AvaliadorGastronomicoDbContext();
         public PartialViewResult ExibirUltimaCritica()
@@ -62,19 +62,12 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         {
             Thread.Sleep(2000);
 
-            IEnumerable<Restaurante> restaurantes = null;
+            var restaurantes = string.IsNullOrEmpty(q)
+                ? new List<Restaurante>()
+                : _db.Restaurantes
+                .Where(r => r.Nome.Contains(q) || string.IsNullOrEmpty(q))
+                .Take(10).ToList();
 
-            if (string.IsNullOrEmpty(q))
-            {
-                restaurantes = new List<Restaurante>();
-            }
-            else
-            {
-
-                restaurantes = _db.Restaurantes
-                    .Where(r => r.Nome.Contains(q) || string.IsNullOrEmpty(q))
-                    .Take(10);
-            }
             return PartialView("_ResultadoBuscaRestaurantes", restaurantes);
         }
         #endregion
@@ -114,5 +107,5 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #endregion
 
 
-    }*/
+    }
 }

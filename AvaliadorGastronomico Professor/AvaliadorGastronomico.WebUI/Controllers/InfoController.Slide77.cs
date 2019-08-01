@@ -9,7 +9,7 @@ using AvaliadorGastronomico.WebUI.ServiceClients;
 
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
-    /*[TrackElapsedTime]
+    [TrackElapsedTime]
     public class InfoController : AsyncController
     {
         //
@@ -18,7 +18,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         {
 
             var model = new InfoViewModel();
-            
+
             var noticiasClient = new NoticiaServiceClient();
             var tempoClient = new TempoServiceClient();
 
@@ -43,5 +43,5 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         {
             return View(model);
         }
-    }*/
+    }
 }

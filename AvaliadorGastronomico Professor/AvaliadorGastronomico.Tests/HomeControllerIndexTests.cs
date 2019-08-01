@@ -15,7 +15,7 @@ namespace AvaliadorGastronomico.Tests
     {
         #region Slide 6
         /* [TestMethod]
-        public void Passando_Mensagens_Na_ViewBag()
+        public void DadoHomeController_QuandoCarregarIndex_ViewBagDeveTerMensagemPreenchida()
         {
             var controller = new HomeController();
             var result = (ViewResult)controller.Index();

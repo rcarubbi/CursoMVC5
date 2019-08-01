@@ -1,0 +1,5 @@
+<QueryList>
+  <Query Id="0" Path="Application">
+    <Select Path="Application">*[System[Provider[@Name='ASP.NET 4.0.30319.0'] and Task = 3]] and *[EventData[Data and (Data="C:\Users\ab1300161\Downloads\CursoMVC5-master\AvaliadorGastronomico\AvaliadorGastronomico.WebUI\")]]</Select>
+  </Query>
+</QueryList>

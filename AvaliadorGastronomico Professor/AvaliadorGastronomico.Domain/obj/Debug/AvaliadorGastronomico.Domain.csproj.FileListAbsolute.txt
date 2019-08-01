@@ -25,3 +25,7 @@ C:\Users\AB1177493\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\Avalia
 C:\Users\AB1177493\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csproj.GenerateResource.Cache
 C:\Users\AB1177493\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.dll
 C:\Users\AB1177493\Source\Repos\CursoMVC5\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.pdb
+C:\Users\ab1300161\Downloads\CursoMVC5-master\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csprojAssemblyReference.cache
+C:\Users\ab1300161\Downloads\CursoMVC5-master\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.Resources.ModelsResources.resources
+C:\Users\ab1300161\Downloads\CursoMVC5-master\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csproj.GenerateResource.cache
+C:\Users\ab1300161\Downloads\CursoMVC5-master\AvaliadorGastronomico Professor\AvaliadorGastronomico.Domain\obj\Debug\AvaliadorGastronomico.Domain.csproj.CoreCompileInputs.cache

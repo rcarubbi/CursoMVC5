@@ -152,9 +152,6 @@ namespace AvaliadorGastronomico.WebUI.Controllers
             }
         }
 
-
-
-
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
             // See http://go.microsoft.com/fwlink/?LinkID=177550 for

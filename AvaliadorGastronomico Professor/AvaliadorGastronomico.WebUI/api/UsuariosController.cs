@@ -1,52 +1,53 @@
-﻿using System;
+﻿using AvaliadorGastronomico.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using AvaliadorGastronomico.Domain;
-using AvaliadorGastronomico.WebUI.Infrastructure;
+using WebMatrix.WebData;
 
-namespace AvaliadorGastronomico.WebUI.api
+namespace AvaliadorGastronomico.WebUI.Api
 {
-    #region Slide 72
-    public class UsuariosController : ApiController
+    public class UsuarioController : ApiController
     {
-        private AvaliadorGastronomicoDbContext _context;
+        private readonly IDbContext _context;
 
-        public UsuariosController()
+        public UsuarioController(IDbContext context)
         {
-            _context = new AvaliadorGastronomicoDbContext();
-            // desabilita funcionalidades de change-tracking e lazyload
-            _context.Configuration.ProxyCreationEnabled = false;
+            _context = context;
+            _context.DisableProxy();
         }
 
-        // GET api/Restaurantes
+        // GET api/<controller>
         public IEnumerable<Usuario> Get()
         {
             return _context.Usuarios;
         }
 
-        // GET api/Restaurantes/5
+        // GET api/<controller>/5
         public Usuario Get(int id)
         {
-            var usuario = _context.Usuarios.Find(id);
+            var usuario = _context.Usuarios.SingleOrDefault(u => u.Id == id);
             if (usuario == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
             return usuario;
-
         }
 
-        // POST api/Restaurantes
+        // POST api/<controller>
         public HttpResponseMessage Post(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Usuarios.Add(usuario);
+                _context.AddUsuario(usuario);
                 _context.SaveChanges();
+
+                WebSecurity.CreateAccount(usuario.Login, "teste123");
+                var roles = (SimpleRoleProvider)System.Web.Security.Roles.Provider;
+                roles.AddUsersToRoles(new string[] { usuario.Login }, new string[] { "User" });
 
                 // respeitando a especificação HTTP da W3C que diz que quando um post é enviado, 
                 // o servidor deve retornar o status 201 (Created) junto com a chave location no cabeçalho 
@@ -63,15 +64,27 @@ namespace AvaliadorGastronomico.WebUI.api
 
         }
 
-        // PUT api/Restaurantes/5
+        // PUT api/<controller>/5
         public HttpResponseMessage Put(int id, Usuario usuario)
         {
             if (ModelState.IsValid && id == usuario.Id)
             {
-                _context.SetModified(usuario);
+                var usuarioAnterior = _context.Usuarios.Single(x => x.Id == id);
+
+                var roles = (SimpleRoleProvider)System.Web.Security.Roles.Provider;
+                roles.RemoveUsersFromRoles(new string[] { usuarioAnterior.Login }, new string[] { "User" });
+
+                var membership = (SimpleMembershipProvider)System.Web.Security.Membership.Provider;
+                membership.DeleteAccount(usuarioAnterior.Login);
+
+                usuarioAnterior.Login = usuario.Login;
+                _context.SetModified(usuarioAnterior);
                 try
                 {
                     _context.SaveChanges();
+
+                    WebSecurity.CreateAccount(usuario.Login, "teste123");
+                    roles.AddUsersToRoles(new string[] { usuario.Login }, new string[] { "User" });
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -86,21 +99,27 @@ namespace AvaliadorGastronomico.WebUI.api
             }
         }
 
-        // DELETE api/Restaurantes/5
+        // DELETE api/<controller>/5
         public HttpResponseMessage Delete(int id)
         {
-            var usuario = _context.Usuarios.Find(id);
+            var usuario = _context.Usuarios.SingleOrDefault(u => u.Id == id);
             if (usuario == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
 
-            _context.Usuarios.Remove(usuario);
+            var roles = (SimpleRoleProvider)System.Web.Security.Roles.Provider;
+            roles.RemoveUsersFromRoles(new string[] { usuario.Login }, new string[] { "User" });
+
+            var membership = (SimpleMembershipProvider)System.Web.Security.Membership.Provider;
+            membership.DeleteAccount(usuario.Login);
+
+            _context.RemoveUsuario(usuario);
             try
             {
                 _context.SaveChanges();
             }
-            catch(DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
@@ -108,5 +127,4 @@ namespace AvaliadorGastronomico.WebUI.api
             return Request.CreateResponse(HttpStatusCode.OK, usuario);
         }
     }
-    #endregion
 }

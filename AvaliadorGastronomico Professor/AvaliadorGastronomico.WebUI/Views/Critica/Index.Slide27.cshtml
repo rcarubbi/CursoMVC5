@@ -8,8 +8,8 @@
 {
     <div class="review">
          <h4>@item.Restaurante.Nome</h4> *@
-         <img src="@Server.MapPath(item.Restaurante.CaminhoImagem)" alt="@item.Restaurante.Nome" /> 
-         @Html.Image(Server.MapPath(item.Restaurante.CaminhoImagem), item.Restaurante.Nome)
+         <img src="@item.Restaurante.CaminhoImagem" alt="@item.Restaurante.Nome" /> 
+         @Html.Image(item.Restaurante.CaminhoImagem, item.Restaurante.Nome)
         <h5>Nota: @item.Nota</h5>
         <p>
             @item.Corpo

@@ -1,0 +1,9 @@
+netsh http add sslcert ipport=0.0.0.0:443 appid={214124cd-d05b-4309-9af9-9caa44b2b74a} certhash=3dfd0fd252475db538209d423b684f4c445c85b5 
+-- recuperar fingerprint do certificado localhost pelo mmc.exe
+netsh 
+http add urlacl url=https://*:443/ user=TODOS
+
+-- copiar certificado para autoridades de certificação raiz confiáveis
+
+
+http://www.hanselman.com/blog/WorkingWithSSLAtDevelopmentTimeIsEasierWithIISExpress.aspx

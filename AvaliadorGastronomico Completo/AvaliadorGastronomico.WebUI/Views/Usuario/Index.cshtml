@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Usuários</h2>
+
+<p>
+
+</p>
+<div id="grid-container">
+
+
+</div>
+
+<button id="criar-usuario">Novo Usuário</button>
+
+<div id="edit-container">
+
+
+</div>
+
+<script id="grid-template" type="text/html">
+    <table>
+        <tr>
+            <th>
+                Login
+            </th>
+            <th></th>
+        </tr>
+        {{#each usuario}}
+        <tr data-id="{{Id}}">
+            <td>
+                {{Login}}
+            </td>
+            <td>
+                <button class="editarUsuario">Editar</button>
+                <button class="excluirUsuario">Excluir</button>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+
+</script>
+
+
+
+<script id="edit-template" type="text/html">
+    <hr />
+    <form>
+        <input type="hidden" name="id" id="id" value="{{Id}}" />
+        <label for="login">Login</label>
+        <input type="text" name="login" id="login" required value="{{Login}}" />
+        <input type="submit" value="Salvar" id="salvar-usuario" />
+    </form>
+</script>
+
+@section scripts
+{
+    <script src="~/Scripts/handlebars.min.js"></script>
+    <script>
+
+       var usuariosServer = (function () {
+           var usuariosApiUrl = '@Url.RouteUrl("DefaultApi", new { HttpRoute = true, controller = "Usuario" })';
+
+           // tratamento de erro global
+           $(document).ajaxError(function (event, xhr) {
+               alert(xhr.status + ":" + xhr.statusText);
+           });
+
+           var listarUsuarios = function () {
+               return $.ajax(usuariosApiUrl);
+           };
+
+           var recuperarUsuario = function (id) {
+               return $.ajax(usuariosApiUrl + "/" + id);
+           };
+
+           var atualizarUsuario = function (usuario) {
+               return $.ajax(usuariosApiUrl + "/" + usuario.Id, {
+                   type: "PUT",
+                   data: usuario
+               });
+           };
+
+           var criarUsuario = function (usuario) {
+               return $.ajax(usuariosApiUrl, {
+                   type: "POST",
+                   data: usuario
+               });
+           };
+
+           var excluirUsuario = function (id) {
+               return $.ajax(usuariosApiUrl + "/" + id, {
+                   type: "DELETE"
+               });
+           };
+
+           return {
+               listarUsuarios: listarUsuarios,
+               recuperarUsuario: recuperarUsuario,
+               atualizarUsuario: atualizarUsuario,
+               criarUsuario: criarUsuario,
+               excluirUsuario: excluirUsuario
+           };
+       }());
+
+
+       (function () {
+
+           var templates = {};
+
+           var compilarTemplates = function () {
+               templates.templateGridUsuarios = Handlebars.compile($("#grid-template").html());
+               templates.templateEdicaoUsuarios = Handlebars.compile($("#edit-template").html());
+           };
+
+           var atualizarUsuarios = function () {
+               usuariosServer.listarUsuarios().done(exibirUsuarios);
+           };
+
+           var exibirUsuarios = function (data) {
+               var output = templates.templateGridUsuarios({ usuario: data });
+               $("#grid-container").html(output);
+           };
+
+           var assinarEventos = function () {
+               // on - interfere no DOM vivo, a cada nova linha inserida os botões passam a ser escutados
+               $(document).on("click", ".editarUsuario", editarUsuario);
+               $(document).on("click", "#salvar-usuario", salvarUsuario);
+               $(document).on("click", "#criar-usuario", criarUsuario);
+               $(document).on("click", ".excluirUsuario", deletarUsuario);
+           };
+
+           var getId = function (element) {
+               return $(element).parents("tr").data("id");
+           };
+
+
+           var editarUsuario = function () {
+               var id = getId(this); // this = botão clicado
+               usuariosServer.recuperarUsuario(id).done(exibirUsuarioParaEdicao);
+           };
+
+           var exibirUsuarioParaEdicao = function (data) {
+               var output = templates.templateEdicaoUsuarios(data);
+               $("#edit-container").html(output);
+           };
+
+           var salvarUsuario = function () {
+               var usuario = {
+                   Id : $("#id").val(),
+                   Login : $("#login").val()
+               };
+
+               var operacao;
+               if (usuario.Id != "0") {
+                   operacao = usuariosServer.atualizarUsuario(usuario);
+               } else {
+                   operacao = usuariosServer.criarUsuario(usuario);
+               }
+
+               operacao.done(atualizarUsuarios, limparCamposEdicao);
+
+               return false;
+           };
+
+           var limparCamposEdicao = function () {
+               $("#edit-container").empty();
+           };
+
+
+           var criarUsuario = function () {
+               var usuario = { Id: 0, Login: "" };
+               exibirUsuarioParaEdicao(usuario);
+           };
+
+           var deletarUsuario = function () {
+                var id = getId(this);
+                usuariosServer.excluirUsuario(id).done(atualizarUsuarios);
+           };
+
+
+
+           $(function () {
+               assinarEventos();
+               compilarTemplates();
+               atualizarUsuarios();
+           });
+
+       }());
+
+    </script>
+}

@@ -10,7 +10,7 @@ using Microsoft.Security.Application;
 namespace AvaliadorGastronomico.WebUI.Controllers
 {
     #region Slide 19
-    /*public class CriticaController : Controller
+    public class CriticaController : Controller
     {
         private AvaliadorGastronomicoDbContext _db = new AvaliadorGastronomicoDbContext();
         public ActionResult Index()
@@ -29,23 +29,23 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #endregion
 
         #region Slide 34
-        //
-        // GET: /Critica/Criar
+
+        //GET: /Critica/Criar
 
         public ActionResult Criar()
         {
             return View(new Critica());
         }
 
-        //
-        // POST: /Critica/Create
+
+        //POST: /Critica/Create
 
         [HttpPost]
         public ActionResult Criar(int idRestaurante, Critica novaCritica)
         {
             try
             {
-                // novaCritica.Corpo = Sanitizer.GetSafeHtmlFragment(novaCritica.Corpo); // Slide 57
+                novaCritica.Corpo = Sanitizer.GetSafeHtmlFragment(novaCritica.Corpo); // Slide 57
                 novaCritica.DataCriacao = DateTime.Now;
                 _db.Restaurantes.Single(r => r.Id == idRestaurante).Criticas.Add(novaCritica);
                 _db.SaveChanges();
@@ -68,8 +68,8 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #endregion
 
         #region Slide 55
-        //
-        // GET: /Critica/Editar/5
+
+        //GET: /Critica/Editar/5
         public ActionResult Editar(int id)
         {
             var critica = _db.Criticas.FindById(id);
@@ -77,8 +77,8 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         }
 
         #region Slide 36
-        //
-        // POST: /Critica/Editar/5
+
+        //POST: /Critica/Editar/5
 
         #region slide 55.2
         [ValidateInput(false)]
@@ -114,7 +114,7 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // criticaAtualizada.Corpo = Sanitizer.GetSafeHtmlFragment(criticaAtualizada.Corpo); // Slide 57
+                criticaAtualizada.Corpo = Sanitizer.GetSafeHtmlFragment(criticaAtualizada.Corpo); // Slide 57
                 _db.Entry(criticaAtualizada).State = System.Data.Entity.EntityState.Modified;
                 _db.SaveChanges();
                 return RedirectToAction("Index");
@@ -126,6 +126,6 @@ namespace AvaliadorGastronomico.WebUI.Controllers
         #endregion
 
         #endregion
-    }*/
+    }
     #endregion
 }

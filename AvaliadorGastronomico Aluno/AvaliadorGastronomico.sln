@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliadorGastronomico.WebUI", "AvaliadorGastronomico.WebUI\AvaliadorGastronomico.WebUI.csproj", "{2F0B3EA3-52E5-48B8-B02C-3EA4B52B28F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F0B3EA3-52E5-48B8-B02C-3EA4B52B28F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0B3EA3-52E5-48B8-B02C-3EA4B52B28F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0B3EA3-52E5-48B8-B02C-3EA4B52B28F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0B3EA3-52E5-48B8-B02C-3EA4B52B28F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10B8FE3A-B328-4C95-B849-76F310A7A88D}
+	EndGlobalSection
+EndGlobal

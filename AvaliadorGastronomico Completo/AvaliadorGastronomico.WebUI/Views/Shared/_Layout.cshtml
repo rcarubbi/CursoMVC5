@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Avaliador Gastronômico</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <img src="~/Content/images/logo.jpg" alt="Avaliador Gastronômico" />
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Críticas", "Index", "Critica")</li>
+                    <li>@Html.ActionLink("Restaurantes", "Index", "Restaurante")</li>
+                    <li>@Html.ActionLink("Cozinhas", "Pesquisar", "Cozinha")</li>
+                    <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+            <div id="footer">
+                @RenderSection("footer", false)
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @RazorHelpers.Script("AvaliadorGastronomico.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

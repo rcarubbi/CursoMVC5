@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliadorGastronomico.Domain", "AvaliadorGastronomico.Domain\AvaliadorGastronomico.Domain.csproj", "{60FA7CE9-01E9-40D5-8639-A872DDE72C0F}"
 EndProject
@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsuariosConsoleClient", "Us
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E64C98D-42BD-4CAF-89BA-E6FEF04E5013}"
 	ProjectSection(SolutionItems) = preProject
+		AspNetHealthMonitoringFilter.Slide65.txt = AspNetHealthMonitoringFilter.Slide65.txt
 		instruções para adicionar certificado self-signed do IIS Express.txt = instruções para adicionar certificado self-signed do IIS Express.txt
 		Treinamento asp.net MVC 4.pptx = Treinamento asp.net MVC 4.pptx
 		Treinamento Asp.net MVC 5.pptx = Treinamento Asp.net MVC 5.pptx
@@ -43,5 +44,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DEDFD49-9C3A-4593-BC2D-6943562C8BFC}
 	EndGlobalSection
 EndGlobal

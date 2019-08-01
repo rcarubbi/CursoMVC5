@@ -1,0 +1,52 @@
+﻿@model AvaliadorGastronomico.Domain.Critica
+
+@{
+    ViewBag.Title = "Criar";
+}
+
+<h2>Criar</h2>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Crítica</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nota)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nota)
+            @Html.ValidationMessageFor(model => model.Nota)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Corpo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Corpo)
+            @Html.ValidationMessageFor(model => model.Corpo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataRefeicao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataRefeicao)
+            @Html.ValidationMessageFor(model => model.DataRefeicao)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
