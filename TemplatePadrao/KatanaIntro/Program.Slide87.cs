@@ -2,15 +2,13 @@
 using Owin;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace KatanaIntro
 {
     using System.IO;
     using System.Web.Http;
-    using AppFunc = Func<System.Collections.Generic.IDictionary<string, object>, Task>;
+    using AppFunc = Func<IDictionary<string, object>, Task>;
     class Program
     {
         static void Main(string[] args)
@@ -25,14 +23,15 @@ namespace KatanaIntro
         }
     }
 
-   
+
 
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
 
-            app.Use(async (context, next) => {
+            app.Use(async (context, next) =>
+            {
                 Console.WriteLine("Request: {0} ", context.Request.Path);
 
                 await next();
@@ -68,11 +67,11 @@ namespace KatanaIntro
 
     public class HelloWorldComponent
     {
- 
- 
+
+
         public HelloWorldComponent(AppFunc next)
         {
-           
+
         }
 
         // conforme a assinatura da func
@@ -87,5 +86,5 @@ namespace KatanaIntro
             // deve retornar uma task ou lançar uma exceção segundo a especificação.
         }
     }
-    
+
 }

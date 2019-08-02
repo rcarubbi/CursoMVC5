@@ -7,7 +7,7 @@ namespace KatanaIntroIIS
 {
     using System.IO;
     using System.Web.Http;
-    using AppFunc = Func<System.Collections.Generic.IDictionary<string, object>, Task>;
+    using AppFunc = Func<IDictionary<string, object>, Task>;
    
     public class Startup
     {

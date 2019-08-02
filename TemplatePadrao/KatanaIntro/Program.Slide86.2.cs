@@ -1,68 +1,66 @@
-﻿using Microsoft.Owin.Hosting;
-using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using Microsoft.Owin.Hosting;
+//using Owin;
+//using System;
+//using System.Collections.Generic;
+//using System.Threading.Tasks;
 
-namespace KatanaIntro
-{
-    /*
-    using System.IO;
-    using AppFunc = Func<System.Collections.Generic.IDictionary<string, object>, Task>;
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string uri = "Http://localhost:8080";
-            using (WebApp.Start<Startup>(uri))
-            {
-                Console.WriteLine("Started");
-                Console.ReadKey();
-                Console.WriteLine("Stopping");
-            }
-        }
-    }
+//namespace KatanaIntro
+//{
 
-   
-
-    public class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            app.UseHelloWorld();
-        }
-    }
+//    using System.IO;
+//    using AppFunc = Func<System.Collections.Generic.IDictionary<string, object>, Task>;
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            string uri = "Http://localhost:8080";
+//            using (WebApp.Start<Startup>(uri))
+//            {
+//                Console.WriteLine("Started");
+//                Console.ReadKey();
+//                Console.WriteLine("Stopping");
+//            }
+//        }
+//    }
 
 
-    public static class AppBuilderExtensions
-    {
-        public static void UseHelloWorld(this IAppBuilder app)
-        {
-            app.Use<HelloWorldComponent>();
-        }
-    }
 
-    public class HelloWorldComponent
-    {
- 
-        public HelloWorldComponent(AppFunc next)
-        {
-           
-        }
+//    public class Startup
+//    {
+//        public void Configuration(IAppBuilder app)
+//        {
+//            app.UseHelloWorld();
+//        }
+//    }
 
-        // conforme a assinatura da func
-        public Task Invoke(IDictionary<string, object> environment)
-        {
-            var response = environment["owin.ResponseBody"] as Stream;
-            using (var writer = new StreamWriter(response))
-            {
-                return writer.WriteAsync("Hello!");
-            }
 
-            // deve retornar uma task ou lançar uma exceção segundo a especificação.
-        }
-    }
- */   
-}
+//    public static class AppBuilderExtensions
+//    {
+//        public static void UseHelloWorld(this IAppBuilder app)
+//        {
+//            app.Use<HelloWorldComponent>();
+//        }
+//    }
+
+//    public class HelloWorldComponent
+//    {
+
+//        public HelloWorldComponent(AppFunc next)
+//        {
+
+//        }
+
+//        // conforme a assinatura da func
+//        public Task Invoke(IDictionary<string, object> environment)
+//        {
+//            var response = environment["owin.ResponseBody"] as Stream;
+//            using (var writer = new StreamWriter(response))
+//            {
+//                return writer.WriteAsync("Hello!");
+//            }
+
+//            // deve retornar uma task ou lançar uma exceção segundo a especificação.
+//        }
+//    }
+
+//}

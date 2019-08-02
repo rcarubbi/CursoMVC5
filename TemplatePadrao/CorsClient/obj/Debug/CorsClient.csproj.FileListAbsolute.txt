@@ -18,3 +18,13 @@ C:\Users\Raphael\Source\Repos\CursoMVC5\TemplatePadrao\CorsClient\bin\Microsoft.
 C:\Users\Raphael\Source\Repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.csprojResolveAssemblyReference.cache
 C:\Users\Raphael\Source\Repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.dll
 C:\Users\Raphael\Source\Repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.pdb
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\bin\CorsClient.dll.config
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\bin\CorsClient.dll
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\bin\CorsClient.pdb
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.csprojAssemblyReference.cache
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.csproj.CoreCompileInputs.cache
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.csproj.CopyComplete
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.dll
+C:\Users\ab1300161\source\repos\CursoMVC5\TemplatePadrao\CorsClient\obj\Debug\CorsClient.pdb
